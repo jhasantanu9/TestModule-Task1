@@ -1,0 +1,81 @@
+diff --git a/__pycache__/main.cpython-38.pyc b/__pycache__/main.cpython-38.pyc
+index cf198bd..f4ada35 100644
+Binary files a/__pycache__/main.cpython-38.pyc and b/__pycache__/main.cpython-38.pyc differ
+diff --git a/__pycache__/testrunner.cpython-38-pytest-6.2.1.pyc b/__pycache__/testrunner.cpython-38-pytest-6.2.1.pyc
+index a46d015..7aedceb 100644
+Binary files a/__pycache__/testrunner.cpython-38-pytest-6.2.1.pyc and b/__pycache__/testrunner.cpython-38-pytest-6.2.1.pyc differ
+diff --git a/main.py b/main.py
+index 9a4db28..665acdf 100644
+--- a/main.py
++++ b/main.py
+@@ -18,7 +18,7 @@ def check_psw_digit(psw):
+   return result
+ 
+ def check_psw_lower(psw):
+-  result = any(char.islower() for char in psw)
++  result = any(char.isupper() for char in psw)
+   return result
+ 
+ def check_psw(psw):
+@@ -26,7 +26,7 @@ def check_psw(psw):
+             and check_psw_upper(psw)
+             and check_psw_lower(psw)
+             and check_psw_digit(psw)
+-            and len(psw) >= 8):
++            and len(psw) >= 7):
+     print("Valid password")
+     return True
+   else:
+diff --git a/testrunner.py b/testrunner.py
+index 6636799..29f390c 100644
+--- a/testrunner.py
++++ b/testrunner.py
+@@ -51,40 +51,25 @@ def test_check_psw8():
+ 
+ # TODO write the unit tests for the new functions, remove the comment notation and replace assert False with your code: ---------------------------- 
+ # 1. Test that two equal passwords return true
+-def test_psw_equal1():
+-    psw1 = "password123"
+-    psw2 = "password123"
+-    assert check_psw_equal(psw1, psw2) is True
++'''def test_psw_equal1():
++  assert False
+ 
+ # 2. Test that the function is case sensitive
+ def test_psw_equal2():
+-    psw1 = "Password123"
+-    psw2 = "password123"
+-    assert check_psw_equal(psw1, psw2) is False
++  assert False
+ 
+ # 3. Test that two inequal passwords return false
+ def test_psw_equal3():
+-    psw1 = "password123"
+-    psw2 = "differentpassword"
+-    assert check_psw_equal(psw1, psw2) is False
++  assert False
+ 
+ # 4. Test that two equal passwords in the correct format and a correct email return true
+ def test_check_credentials1():
+-    email = "myname@example.com"
+-    psw1 = "Qwerty@123"
+-    psw2 = "Qwerty@123"
+-    assert check_credentials(email, psw1, psw2) is True
++  assert False
+ 
+ # 5. Test that two inequal passwords in the correct format and a correct email return false
+ def test_check_credentials2():
+-    email = "myname@example.com"
+-    psw1 = "Qwerty@123"
+-    psw2 = "Different@123"
+-    assert check_credentials(email, psw1, psw2) is False
++  assert False
+ 
+ # 6. Test that two equal passwords in the correct format and an incorrect email return false
+ def test_check_credentials3():
+-    email = "invalidemail"
+-    psw1 = "Qwerty@123"
+-    psw2 = "Qwerty@123"
+-    assert check_credentials(email, psw1, psw2) is False
+\ No newline at end of file
++  assert False'''
