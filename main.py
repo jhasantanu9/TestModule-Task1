@@ -18,7 +18,7 @@ def check_psw_digit(psw):
   return result
 
 def check_psw_lower(psw):
-  result = any(char.isupper() for char in psw)
+  result = any(char.islower() for char in psw)
   return result
 
 def check_psw(psw):
@@ -26,7 +26,7 @@ def check_psw(psw):
             and check_psw_upper(psw)
             and check_psw_lower(psw)
             and check_psw_digit(psw)
-            and len(psw) >= 7):
+            and len(psw) >= 8):
     print("Valid password")
     return True
   else:
